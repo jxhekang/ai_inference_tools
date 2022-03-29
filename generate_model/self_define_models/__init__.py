@@ -1,0 +1,3 @@
+from self_define_models.mlp import MLP
+from self_define_models.eagle_eye_face3 import EagleEyeFace3
+from self_define_models.scrfd_0_5g import SCRFD
