@@ -154,7 +154,7 @@ if __name__ == "__main__":
                           opset_version=12,          # the ONNX version to export the model to
                           do_constant_folding=True,  # whether to execute constant folding for optimization
                           input_names = ['input'],   # the model's input names
-                          dynamic_axes={'input': {0: 'n', 1: 'c', 2: 'h', 3: 'w'}} # support dynamic reshape
+                        #   dynamic_axes={'input': {0: 'n', 1: 'c', 2: 'h', 3: 'w'}} # support dynamic reshape
                         # example_outputs=out
                         ) # the model's output names
     else:

@@ -1,0 +1,1 @@
+docker run -ti --runtime=nvidia  --shm-size="8g"  -v $(pwd):/workspace -w /workspace nvcr.io/nvidia/pytorch:21.03-py3

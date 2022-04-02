@@ -1,8 +1,7 @@
 import numpy as np
 import cv2
 from termcolor import cprint
-
-
+from PIL import Image, ImageDraw, ImageFont
 class DataLoader:
     def __init__(self, args, input_shape):
         self.input_synthetic = args.input_synthetic
@@ -30,7 +29,7 @@ class DataLoader:
 
     def __call__(self):
         if(self.input_synthetic):
-            output = np.ones(self.input_shape)
+            output = np.ones(self.input_shape, dtype=np.float32)
         else:# image
             output = self.get_img_np_nchw(self.filename, self.input_shape[2], self.input_shape[3])
         return output

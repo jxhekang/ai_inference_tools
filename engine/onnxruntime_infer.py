@@ -4,14 +4,14 @@ import onnxruntime
 from termcolor import cprint
 
 class OnnxRuntimeInfer:
-    def __init__(self, args):
-        onnx_model = onnx.load(args.net)
+    def __init__(self, model_dir, thread_num):
+        onnx_model = onnx.load(model_dir)
         onnx.checker.check_model(onnx_model)
         sess_options = onnxruntime.SessionOptions()
-        sess_options.intra_op_num_threads = self.thread_num
+        sess_options.intra_op_num_threads = thread_num
         sess_options.execution_mode = onnxruntime.ExecutionMode.ORT_SEQUENTIAL
         sess_options.graph_optimization_level = onnxruntime.GraphOptimizationLevel.ORT_ENABLE_ALL
-        self.ort_session = onnxruntime.InferenceSession(args.net, sess_options)
+        self.ort_session = onnxruntime.InferenceSession(model_dir, sess_options)
         # self.input_shape = xx
         # self.output_shape = xx
         
